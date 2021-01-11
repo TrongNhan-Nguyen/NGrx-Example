@@ -1,5 +1,5 @@
 import { IPostState } from './post.state';
-import { EPostAction, PostAction } from './post.action';
+import { EPostAction, PostAction, ChangeMsg } from './post.action';
 const initPostState: IPostState = {
   postList: [],
   filterList: [],
@@ -32,6 +32,9 @@ export function postReducer(
     }
     case EPostAction.GET_ALL: {
       return { ...state };
+    }
+    case EPostAction.CHANGE_MSG: {
+      return { ...state, msg: action.payload };
     }
 
     default:

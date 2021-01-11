@@ -6,6 +6,7 @@ export enum EPostAction {
   DELETE = '[POST] Delete',
   GET_ALL = '[POST] Get all posts',
   GET_POST = '[POST] GET post',
+  CHANGE_MSG = '[POST] Change msg',
 }
 export class Create implements Action {
   public readonly type = EPostAction.CREATE;
@@ -26,5 +27,15 @@ export class GetPost implements Action {
   public readonly type = EPostAction.GET_POST;
   constructor(public payload?: any) {}
 }
+export class ChangeMsg implements Action {
+  public readonly type = EPostAction.CHANGE_MSG;
+  constructor(public payload: string) {}
+}
 
-export type PostAction = Create | Update | Delete | GetPost | GetAll;
+export type PostAction =
+  | Create
+  | Update
+  | Delete
+  | GetPost
+  | GetAll
+  | ChangeMsg;

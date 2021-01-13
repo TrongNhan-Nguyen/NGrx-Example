@@ -7,6 +7,7 @@ const initPostState: IPostState = {
   filter: '',
   activeId: '',
 };
+export const postFeatureKey = "post";
 
 export function postReducer(
   state = initPostState,
